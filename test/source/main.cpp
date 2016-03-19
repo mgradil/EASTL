@@ -115,6 +115,7 @@ int EAMain(int argc, char* argv[])
 	testSuite.AddTest("Set",            TestSet);
 	testSuite.AddTest("FixedSet",       TestFixedSet);
 	testSuite.AddTest("Hash",           TestHash);
+	testSuite.AddTest("Unordered",      TestUnordered);
 	testSuite.AddTest("FixedHash",      TestFixedHash);
 	testSuite.AddTest("IntrusiveHash",  TestIntrusiveHash);
 	testSuite.AddTest("VectorMap",      TestVectorMap);
@@ -128,6 +129,7 @@ int EAMain(int argc, char* argv[])
 	testSuite.AddTest("BitVector",      TestBitVector);
 	testSuite.AddTest("Ratio",          TestRatio);
 	testSuite.AddTest("Chrono",         TestChrono);
+	testSuite.AddTest("FrontList",      TestForwardList);
 
 	nErrorCount += testSuite.Run();
 
