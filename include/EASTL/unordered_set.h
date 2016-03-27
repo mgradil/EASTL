@@ -107,7 +107,7 @@ namespace eastl
 		typedef hashtable<Value, Value, Allocator, eastl::use_self<Value>, Predicate, 
 						  Hash, mod_range_hashing, default_ranged_hash,
 						  prime_rehash_policy, bCacheHashCode, false, true>       base_type;
-		typedef unordered_set<Value, Hash, Predicate, Allocator, bCacheHashCode>       this_type;
+		typedef unordered_set<Value, Hash, Predicate, Allocator, bCacheHashCode>  this_type;
 		typedef typename base_type::size_type                                     size_type;
 		typedef typename base_type::value_type                                    value_type;
 		typedef typename base_type::allocator_type                                allocator_type;

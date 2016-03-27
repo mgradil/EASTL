@@ -1416,6 +1416,14 @@ int TestUnordered()
 	}
 
 
+    {
+        // size_type max_size() const EA_NOEXCEPT
+		unordered_set<int> uoSet;
+        auto maxSize = uoSet.max_size();
+        EATEST_VERIFY(maxSize > 0);
+    }
+
+
 	{
 		// unordered_set(size_type nBucketCount, const Hash& hashFunction = Hash(), const Predicate& predicate = Predicate(), const allocator_type& allocator);
 		// hashtable(const hashtable& x);

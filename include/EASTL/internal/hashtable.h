@@ -929,6 +929,9 @@ namespace eastl
 		size_type size() const EA_NOEXCEPT
 			{ return mnElementCount; }
 
+        size_type max_size() const EA_NOEXCEPT
+            { return eastl::numeric_limits<size_type>::max(); }
+
 		size_type bucket_count() const EA_NOEXCEPT
 			{ return mnBucketCount; }
 
