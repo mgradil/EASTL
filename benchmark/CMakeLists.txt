@@ -33,6 +33,7 @@ set(SOURCES ${EASTLBENCHMARK_SOURCES})
 # Defines 
 #-------------------------------------------------------------------------------------------
 add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+add_definitions(-D_CHAR16T)
 add_definitions(-DEASTL_THREAD_SUPPORT_AVAILABLE=0)
 add_definitions(-DEASTL_OPENSOURCE)
 add_definitions(-D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS)  # silence std::hash_map deprecation warnings
