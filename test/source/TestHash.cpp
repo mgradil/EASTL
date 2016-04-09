@@ -2092,6 +2092,7 @@ int TestUnordered()
 		}
 	}
 
+
 	{
 		#if EASTL_MOVE_SEMANTICS_ENABLED
 			// hashtable(this_type&& x);
@@ -2154,6 +2155,25 @@ int TestUnordered()
 			EATEST_VERIFY(intHashMap.find(44) != intHashMap.end());
 		#endif
 	}
+
+    // pair<iterator, bool> insert_or_assign(const key_type& k, M&& obj);
+    // pair<iterator, bool> insert_or_assign(key_type&& k, M&& obj);
+    // iterator             insert_or_assign(const_iterator hint, const key_type& k, M&& obj);
+    // iterator             insert_or_assign(const_iterator hint, key_type&& k, M&& obj);
+    //
+    // http://en.cppreference.com/w/cpp/container/unordered_map/insert_or_assign
+    {
+    }
+
+    
+    // template <class... Args> pair<iterator, bool> try_emplace(const key_type& k, Args&&... args);
+    // template <class... Args> pair<iterator, bool> try_emplace(key_type&& k, Args&&... args);
+    // template <class... Args> iterator             try_emplace(const_iterator hint, const key_type& k, Args&&... args);
+    // template <class... Args> iterator             try_emplace(const_iterator hint, key_type&& k, Args&&... args);
+    //
+    // http://en.cppreference.com/w/cpp/container/unordered_map/try_emplace
+    {
+    }
 
 	return nErrorCount;
 }
