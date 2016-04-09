@@ -1,10 +1,13 @@
 language: cpp
+
 os:
   - linux
   - osx
+
 compiler: 
     - gcc
     - clang
+
 addons:
   apt:
     sources:
@@ -13,6 +16,7 @@ addons:
     - gcc-4.8
     - g++-4.8
     - clang
+
 matrix:
     exclude:
     - os: osx

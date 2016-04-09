@@ -20,7 +20,7 @@ include_directories(source)
 set(CMAKE_CXX_STANDARD 11)
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wno-pointer-bool-conversion")
+	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wunknown-warning-option -Wno-pointer-bool-conversion")
 endif()
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "GNU")
