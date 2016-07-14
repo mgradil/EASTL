@@ -228,7 +228,8 @@ namespace eastl
 
 		void free_value() EA_NOEXCEPT
 		{
-			mDeleter(mValue);
+			if(mValue)
+				mDeleter(mValue);
 			mValue = NULL;
 		}
 
@@ -1010,7 +1011,8 @@ namespace eastl
 				}
 				catch(...) // The exception would usually be std::bad_alloc.
 				{
-					deleter(pValue); // 20.7.2.2.1 p7: If an exception is thrown, delete p is called.
+					if(pValue)
+						deleter(pValue); // 20.7.2.2.1 p7: If an exception is thrown, delete p is called.
 					throw;           // Throws: bad_alloc, or an implementation-defined exception when a resource other than memory could not be obtained.
 				}
 			#else
@@ -1023,7 +1025,8 @@ namespace eastl
 				}
 				else
 				{
-					deleter(pValue);    // We act the same as we do above with exceptions enabled.
+					if(pValue)
+						deleter(pValue);    // We act the same as we do above with exceptions enabled.
 				}
 			#endif
 		}

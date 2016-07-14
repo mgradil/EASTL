@@ -73,8 +73,11 @@ namespace eastl
 		/// in the owned array will be called. 
 		~scoped_array()
 		{
-			Deleter del;
-			del(mpArray);
+			if(mpArray)
+			{
+				Deleter del;
+				del(mpArray);
+			}
 		}
 
 		/// reset
@@ -89,8 +92,11 @@ namespace eastl
 		{
 			if(pArray != mpArray)
 			{
-				Deleter del;
-				del(mpArray);
+				if(mpArray)
+				{
+					Deleter del;
+					del(mpArray);
+				}
 				mpArray = pArray;
 			}
 		}

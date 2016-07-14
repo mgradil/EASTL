@@ -136,8 +136,11 @@ namespace eastl
 			{
 				if(unique())
 				{
-					deleter_type del;
-					del(mpArray);
+					if(mpArray)
+					{
+						deleter_type del;
+						del(mpArray);
+					}
 				}
 				else
 				{
@@ -273,8 +276,11 @@ namespace eastl
 			}
 			while(p != this);
 
-			deleter_type del;
-			del(pArray);
+			if(pArray)
+			{
+				deleter_type del;
+				del(pArray);
+			}
 		}
 
 	}; // class linked_array

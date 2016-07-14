@@ -171,8 +171,11 @@ namespace eastl
 			if(newRefCount == 0)
 			{
 				EASTLFree(mAllocator, mpRefCount, sizeof(ref_count));
-				Deleter del;
-				del(mpArray);
+				if(mpArray)
+				{
+					Deleter del;
+					del(mpArray);
+				}
 			}
 		}
 

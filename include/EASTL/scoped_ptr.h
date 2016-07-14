@@ -94,8 +94,11 @@ namespace eastl
 		/// referred to by the owned pointer will be called.
 		~scoped_ptr()
 		{
-			Deleter del;
-			del(mpValue);
+			if(mpValue)
+			{
+				Deleter del;
+				del(mpValue);
+			}
 		}
 
 		/// reset
@@ -110,8 +113,11 @@ namespace eastl
 		{
 			if(pValue != mpValue)
 			{
-				Deleter del;
-				del(mpValue);
+				if(mpValue)
+				{
+					Deleter del;
+					del(mpValue);
+				}
 				mpValue = pValue;
 			}
 		}

@@ -200,8 +200,11 @@ namespace eastl
 			{
 				if(unique())
 				{
-					deleter_type del;
-					del(mpValue);
+					if(mpValue)
+					{
+						deleter_type del;
+						del(mpValue);
+					}
 				}
 				else
 				{
@@ -352,8 +355,11 @@ namespace eastl
 		void force_delete()
 		{
 			T* const pValue = detach();
-			Deleter del;
-			del(pValue);
+			if(pValue)
+			{
+				Deleter del;
+				del(pValue);
+			}
 		}
 
 	}; // class linked_ptr
